@@ -1,0 +1,17 @@
+#include "types.h"
+#include "stat.h"
+#include "user.h"
+
+int main(int argc,char** argv){
+
+  if(argc==1)
+    printf(1,"No Commands given\n");
+  if(fork()==0)
+  exec(argv[1],argv+1);
+  else{
+int rtime,wtime;
+waitx(&rtime,&wtime);
+printf(1,"\nRunning Time:%d Ticks\nWaiting Time:%d Ticks\n",rtime,wtime);
+  }
+exit();
+}
